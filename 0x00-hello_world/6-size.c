@@ -1,14 +1,15 @@
 #include <stdio.h>
-/**
-  *main - Entry point
-  *Return: always 0 (success)
-  */
-int main(void)
-{
-	printf("Size of a char: %lu bytes\n", sizeof(char));
-	printf("Size of an int: %lu bytes\n", sizeof(int));
-	printf("Size of a long int: %lu bytes\n", sizeof(long int));
-	printf("Size of a long long int: %lu bytes\n", sizeof(long long int));
-	printf("Size of a float: %lu bytes(s)", sizeof(float));
-	return (0);
+
+void print_size(const char* name, size_t size) {
+    const char* plural = (size == 1) ? "" : "s";
+    printf("Size of a %s: %lu byte%s\n", name, size, plural);
+}
+
+int main(void) {
+    print_size("char", sizeof(char));
+    print_size("int", sizeof(int));
+    print_size("long int", sizeof(long int));
+    print_size("long long int", sizeof(long long int));
+    print_size("float", sizeof(float));
+    return 0;
 }
