@@ -7,16 +7,18 @@
  */
 int main(void)
 {
-	unsigned long int first = 1, second = 2, next, i;
+	unsigned long int first = 1, second = 2, next;
+	int count = 2;
 
 	printf("%lu, %lu", first, second);
 
-	for (i = 2; i < 98; i++)
+	while (count < 98)
 	{
 		next = first + second;
 		printf(", %lu", next);
 		first = second;
 		second = next;
+		count++;
 	}
 
 	printf("\n");
