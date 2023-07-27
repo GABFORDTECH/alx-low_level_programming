@@ -7,17 +7,16 @@
  */
 int main(void)
 {
-	unsigned long long int prev1 = 1, prev2 = 2, next;
-	int i;
+	unsigned long int first = 1, second = 2, next, i;
 
-	printf("%llu, %llu", prev1, prev2);
+	printf("%lu, %lu", first, second);
 
 	for (i = 2; i < 98; i++)
 	{
-		next = prev1 + prev2;
-		printf(", %llu", next);
-		prev1 = prev2;
-		prev2 = next;
+		next = first + second;
+		printf(", %lu", next);
+		first = second;
+		second = next;
 	}
 
 	printf("\n");
