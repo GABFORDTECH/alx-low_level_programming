@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - Entry point
@@ -8,32 +7,20 @@
  */
 int main(void)
 {
-    int count = 98;
-    unsigned long int *fibonacci = (unsigned long int *)malloc(count * sizeof(unsigned long int));
+	unsigned long int prev1 = 1, prev2 = 2, next;
+	int i;
 
-    if (fibonacci == NULL)
-    {
-        printf("Memory allocation failed.\n");
-        return 1;
-    }
+	printf("%lu, %lu", prev1, prev2);
 
-    fibonacci[0] = 1;
-    fibonacci[1] = 2;
+	for (i = 2; i < 98; i++)
+	{
+		next = prev1 + prev2;
+		printf(", %lu", next);
+		prev1 = prev2;
+		prev2 = next;
+	}
 
-    for (int i = 2; i < count; i++)
-    {
-        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
-    }
+	printf("\n");
 
-    printf("%lu", fibonacci[0]);
-
-    for (int i = 1; i < count; i++)
-    {
-        printf(", %lu", fibonacci[i]);
-    }
-
-    printf("\n");
-
-    free(fibonacci);
-    return 0;
+	return (0);
 }
