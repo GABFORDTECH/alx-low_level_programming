@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	int count = 50;
+	unsigned long int count = 50;
 	unsigned long int first = 1, second = 2, next, i;
 
 	printf("%lu, %lu", first, second);
