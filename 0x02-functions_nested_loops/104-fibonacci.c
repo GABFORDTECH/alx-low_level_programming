@@ -7,16 +7,23 @@
  */
 int main(void)
 {
-	unsigned long int first = 1, second = 2, next, i;
+	int count = 98;
+	unsigned long int fibonacci[count];
+	int i;
 
-	printf("%lu, %lu", first, second);
+	fibonacci[0] = 1;
+	fibonacci[1] = 2;
 
-	for (i = 2; i < 98; i++)
+	for (i = 2; i < count; i++)
 	{
-		next = first + second;
-		printf(", %lu", next);
-		first = second;
-		second = next;
+		fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+	}
+
+	printf("%lu", fibonacci[0]);
+
+	for (i = 1; i < count; i++)
+	{
+		printf(", %lu", fibonacci[i]);
 	}
 
 	printf("\n");
