@@ -7,20 +7,22 @@
  */
 int main(void)
 {
-	unsigned long int fib1 = 1, fib2 = 2, sum;
+	unsigned long int fib[100];
 	int count;
 
-	printf("%lu, %lu", fib1, fib2);
+	fib[0] = 1;
+	fib[1] = 2;
 
-	for (count = 2; count < 98; count++)
+	for (count = 2; count < 100; count++)
 	{
-		sum = fib1 + fib2;
-		printf(", %lu", sum);
-
-		fib1 = fib2;
-		fib2 = sum;
+		fib[count] = fib[count - 1] + fib[count - 2];
 	}
 
+	printf("%lu", fib[0]);
+	for (count = 1; count < 98; count++)
+	{
+		printf(", %lu", fib[count]);
+	}
 	printf("\n");
 
 	return (0);
