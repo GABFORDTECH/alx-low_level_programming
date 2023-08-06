@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	unsigned long int fib[98];
+	unsigned long long int fib[98];
 	int count;
 
 	fib[0] = 1;
