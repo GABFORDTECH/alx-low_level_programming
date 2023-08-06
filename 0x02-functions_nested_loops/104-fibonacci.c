@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	unsigned long long int fib[100];
+	unsigned long fib[100];
 	int count;
 
 	fib[0] = 1;
@@ -18,10 +18,10 @@ int main(void)
 		fib[count] = fib[count - 1] + fib[count - 2];
 	}
 
-	printf("%llu", fib[0]);
+	printf("%lu", fib[0]);
 	for (count = 1; count < 98; count++)
 	{
-		printf(", %llu", fib[count]);
+		printf(", %lu", fib[count]);
 	}
 	printf("\n");
 
