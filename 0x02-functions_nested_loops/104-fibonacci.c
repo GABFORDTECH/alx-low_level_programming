@@ -7,13 +7,13 @@
  */
 int main(void)
 {
-	unsigned long int fib[100];
+	unsigned long int fib[98];
 	int count;
 
 	fib[0] = 1;
 	fib[1] = 2;
 
-	for (count = 2; count < 100; count++)
+	for (count = 2; count < 98; count++)
 	{
 		fib[count] = fib[count - 1] + fib[count - 2];
 	}
